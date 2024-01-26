@@ -24,9 +24,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import StackedLineChartIcon from '@mui/icons-material/StackedLineChart';
 import GrassOutlinedIcon from '@mui/icons-material/GrassOutlined';
 import TerrainOutlinedIcon from '@mui/icons-material/TerrainOutlined';
-import { deepPurple } from '@mui/material/colors';
 import ViewModuleIcon from '@mui/icons-material/ViewModule';
-import { useState } from 'react';
 import './header.css';
 
 const drawerWidth = 240;
@@ -130,12 +128,7 @@ export default function PersistentDrawerLeft(props) {
     }
   ];
 
-  const [selectedListItem, setSelectedListItem] = useState(0);
 
-  const handleListItemClick = (index , event) => {
-    setSelectedListItem(index);
-    event.preventDefault();
-  };
 
   return (
     <Box sx={{ display: 'flex' }} className="header__stat">

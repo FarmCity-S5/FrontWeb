@@ -1,4 +1,4 @@
-import MessageContent from "./MessageContent";
+
 
 function Message(){
     return(
