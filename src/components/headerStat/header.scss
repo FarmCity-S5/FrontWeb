@@ -1,0 +1,26 @@
+@import '../../style/scss/color';
+
+
+
+.list{
+    .icon__button{
+        background-color: $deepPurple;
+        color: white;
+    }
+}
+
+body::-webkit-scrollbar{
+    width: 5px;
+}
+body::-webkit-scrollbar-track{
+    background: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+
+
+

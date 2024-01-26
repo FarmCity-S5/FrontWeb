@@ -1,0 +1,25 @@
+.home__section {
+  width: 75%;
+  margin: auto auto;
+  padding-top: 100px;
+  padding-right: 10px;
+  padding-left: 10px;
+  padding-bottom: 15px;
+  height: 80vh;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  -moz-column-gap: 20px;
+       column-gap: 20px;
+  row-gap: 30px;
+  overflow-y: scroll;
+}
+.home__section::-webkit-scrollbar {
+  width: 5px;
+}
+.home__section::-webkit-scrollbar-track {
+  background: transparent;
+}
+.home__section::-webkit-scrollbar-thumb {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 5px;
+}/*# sourceMappingURL=home.css.map */
