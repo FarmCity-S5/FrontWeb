@@ -9,7 +9,7 @@ import Parcelle from "./page/BackOffice/Statistique/Parcelle";
 export const routes =[
     {
         path:'/',
-        element: <Home /> 
+        element: <Statistique /> 
     },
     {
         path:'/chat',
