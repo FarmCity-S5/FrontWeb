@@ -1,6 +1,7 @@
 // material-ui
 import { Box, Table, TableBody, TableCell, TableContainer, TableRow} from '@mui/material';
-
+import CloseIcon from '@mui/icons-material/Close';
+import DoneIcon from '@mui/icons-material/Done';
 
 const data = [
     {
@@ -30,7 +31,7 @@ export default function TableauTerrain() {
         <Table aria-labelledby="tableTitle" sx={{ '& .MuiTableCell-root:first-of-type': { pl: 2 }, '& .MuiTableCell-root:last-of-type': { pr: 3 } }}>
           <TableBody>
 
-                <TableRow  hover role="checkbox" sx={{ '&:last-child td, &:last-child th': { border: 0 } }} >
+                <TableRow  hover role="checkbox" sx={{ '&:last-child td, &:last-child th': { border: 0 } }} style={{backgroundColor:'whitegray'}} >
                   <TableCell component="th"  scope="row" align="left">ID Terrain</TableCell>
                   <TableCell align="left" > Description </TableCell>
                   <TableCell align="center"> Nombre de parcelle </TableCell>
@@ -45,8 +46,18 @@ export default function TableauTerrain() {
                         <TableCell align="left" > {item.description} </TableCell>
                         <TableCell align="center"> {item.parcelle} </TableCell>
                         <TableCell align="center">{item.localisation}  </TableCell>
-                        <TableCell align="left" ><button>Confirmer</button></TableCell>
-                        <TableCell align="left" ><button>Refuser</button></TableCell>
+                        
+                        <TableCell align="left" >
+                          <button className='confirm'>
+                            <DoneIcon fontSize='small' ></DoneIcon>
+                          </button>
+                        </TableCell>
+
+                        <TableCell align="left" >
+                          <button className='denied'>
+                            <CloseIcon fontSize='small' ></CloseIcon>
+                          </button>
+                        </TableCell>
                     </TableRow>
                 ))}
             

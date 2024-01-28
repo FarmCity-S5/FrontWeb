@@ -1,6 +1,7 @@
 import './graph.css';
 import PhotoLibraryOutlinedIcon from '@mui/icons-material/PhotoLibraryOutlined';
 import TableauTerrain from '../statistique/TableauTerrain';
+
 export default function MainTerrain(){
     return(
         <>
@@ -113,8 +114,11 @@ export default function MainTerrain(){
 
         <div className='terrain__second'>
             <div className="terrain__second__table">
-                <h3 style={{marginLeft:'10px',marginBottom:'20px'}}>Liste terrain en attente de confirmation</h3>
+                <h3 style={{marginLeft:'10px',marginBottom:'20px'}}>Terrain en attente de confirmation</h3>
                 <TableauTerrain></TableauTerrain>
+            </div>
+            <div className="terrain__second__cards">
+                
             </div>
         </div>
         </>

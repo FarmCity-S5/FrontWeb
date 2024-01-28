@@ -8,7 +8,7 @@
 .culture__form {
   height: -moz-fit-content;
   height: fit-content;
-  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.1);
+  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.3);
   width: 90%;
   margin-top: 20px;
   padding: 20px 60px 40px 60px;
@@ -45,7 +45,7 @@
 .culture__tableau {
   margin-top: 20px;
   padding: 10px;
-  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.1);
+  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.3);
   height: -moz-fit-content;
   height: fit-content;
 }
@@ -57,7 +57,7 @@
   height: fit-content;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.1);
+  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.3);
   padding: 20px;
   -moz-column-gap: 10px;
        column-gap: 10px;
@@ -68,14 +68,14 @@
 .terrain__form {
   padding-left: 20px;
   padding-bottom: 20px;
-  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.1);
+  box-shadow: 0 5px 10px rgba(57, 57, 57, 0.3);
 }
 .terrain__form .custom-file-input {
-  font-size: 0.8em;
+  font-size: 0.9em;
   display: inline-block;
   position: relative;
   cursor: pointer;
-  background-color: #673ab7;
+  background-color: #072f7e;
   color: white;
   padding: 8px 16px;
   border: none;
@@ -237,13 +237,43 @@
 }
 .terrain__second {
   width: 100%;
-  height: 50vh;
+  height: -moz-fit-content;
+  height: fit-content;
   margin-top: 25px;
   display: grid;
-  grid-template-columns: 65% 35%;
+  grid-template-columns: 70% 30%;
+}
+.terrain__second button.confirm {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adjust spacing as needed */
+  padding: 5px 8px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px; /* Adjust border radius as desired */
+  background-color: #072f7e; /* Green background */
+  color: white;
+  cursor: pointer;
+}
+.terrain__second button.confirm span {
+  margin-left: 10px;
+}
+.terrain__second button.denied {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Adjust spacing as needed */
+  padding: 5px 8px; /* Adjust padding as needed */
+  border: none;
+  border-radius: 5px; /* Adjust border radius as desired */
+  background-color: rgb(217, 21, 21); /* Green background */
+  color: white;
+  cursor: pointer;
+}
+.terrain__second button.denied span {
+  margin-left: 10px;
 }
 .terrain__second__table {
-  box-shadow: 0 5px 10px rgba(34, 34, 34, 0.1);
+  box-shadow: 0 5px 10px rgba(29, 29, 29, 0.4);
   padding-left: 10px;
   padding-right: 10px;
+  padding-bottom: 40px;
 }/*# sourceMappingURL=graph.css.map */
