@@ -1,5 +1,4 @@
 import React from "react";
-import Home from "./page/Home/Home";
 import Chat from "./page/Chat/Chat";
 import Statistique from "./page/BackOffice/Statistique/Statistique";
 import Culture from "./page/BackOffice/Statistique/Culture";
