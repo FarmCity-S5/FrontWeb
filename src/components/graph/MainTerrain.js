@@ -46,13 +46,6 @@ export default function MainTerrain(){
         }
     }, [position]);
 
-    function getMapCenter(map) {
-        const center = map.getCenter();
-        return {
-          lat: center.lat(),
-          lng: center.lng(),
-        };
-      }
 
    
 

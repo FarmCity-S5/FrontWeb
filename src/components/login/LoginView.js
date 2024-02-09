@@ -65,12 +65,12 @@ export default function LoginView() {
         <form onSubmit={handleSubmit}>
           <div className="login__form__input">
             <span><FaRegUser className="icon"></FaRegUser></span>
-            <input type="text" name="nom"></input>
+            <input type="text" name="nom" value="Fanilo"></input>
           </div>
 
           <div className="login__form__input">
             <span><FaRegEyeSlash className="icon"></FaRegEyeSlash></span>
-            <input type="password" name="password"></input>
+            <input type="password" name="password" value="1234"></input>
           </div>
       
           <div className='login__form__button'>

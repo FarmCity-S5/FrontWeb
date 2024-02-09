@@ -138,8 +138,6 @@ export default function PersistentDrawerLeft(props) {
     }
   ];
 
-  const user = localStorage.getItem('utilisateur');
-
   return (
     <Box sx={{ display: 'flex' }} className="header__stat">
       <CssBaseline />

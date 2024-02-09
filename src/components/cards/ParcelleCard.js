@@ -7,7 +7,7 @@ import './parcellecard.css';
 
 export default function ParcelleCard(props){
 
-  const { images,description,nbParcelle,longitude,latitude,dataTerrain } = props;
+  const { images,description,nbParcelle,longitude,latitude } = props;
   const settings = {
     dots: true,
     infinite: true,
