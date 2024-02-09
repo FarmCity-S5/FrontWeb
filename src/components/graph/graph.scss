@@ -226,7 +226,7 @@
     &__liste{
         padding-left: 10px;
         padding-right: 10px;
-        height: 55vh;
+        height: 60vh;
         overflow-y: scroll;
 
         &::-webkit-scrollbar{
@@ -327,4 +327,23 @@
   }
 
 
+}
+
+
+// parcelle
+
+.parcelle{
+  margin-top: 50px;
+  text-align: center;
+
+  &__liste{
+    margin-top: 30px;
+    text-align: start;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
+    row-gap: 40px;
+  }
+  
 }

@@ -5,7 +5,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import AvatarMan from '../avatar/AvatarMan';
 import SearchIcon from '@mui/icons-material/Search';
-import {Link} from 'react-router-dom';
+
 
 const StyledBadge = styled(Badge)(({ theme }) => ({
     '& .MuiBadge-badge': {
@@ -35,7 +35,7 @@ function Header(){
                 <div className="header__navbar__icons">
                     <div className="header__navbar__icons__items">
                         <Badge badgeContent={4} color="secondary">
-                            <Link to="chat"><MailOutlineIcon style={{color:'white'}}  fontSize='medium' className='icons'></MailOutlineIcon></Link>       
+                            <MailOutlineIcon style={{color:'white'}}  fontSize='medium' className='icons'></MailOutlineIcon>
                         </Badge>
                     </div>
                 
@@ -60,7 +60,7 @@ function Header(){
                             className="header__navbar__icons__avatar"
                             >
                             {/* <Avatar alt="Ismael Raveloson" src="./sary.jpg" /> */}
-                            <AvatarMan image={"./sary.jpg"} ></AvatarMan>
+                            <AvatarMan ></AvatarMan>
                         </StyledBadge>
                     
                 </div>

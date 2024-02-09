@@ -1,5 +1,5 @@
 .card {
-  background-color: #525252;
+  background-color: #EAF9E7;
   width: 100%;
   height: 42vh;
   display: grid;
@@ -38,7 +38,7 @@
   display: grid;
   width: 100%;
   grid-template-columns: 18% 75%;
-  color: white;
+  color: black;
 }
 .card__info__avatar {
   display: flex;

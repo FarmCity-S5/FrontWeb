@@ -196,7 +196,7 @@
 .terrain__liste {
   padding-left: 10px;
   padding-right: 10px;
-  height: 55vh;
+  height: 60vh;
   overflow-y: scroll;
 }
 .terrain__liste::-webkit-scrollbar {
@@ -276,4 +276,19 @@
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 40px;
+}
+
+.parcelle {
+  margin-top: 50px;
+  text-align: center;
+}
+.parcelle__liste {
+  margin-top: 30px;
+  text-align: start;
+  justify-content: center;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+  row-gap: 40px;
 }/*# sourceMappingURL=graph.css.map */

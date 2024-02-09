@@ -1,50 +1,22 @@
-import React, { useState, useEffect } from 'react';
-import axios from 'axios';
+import React, { useEffect, useRef } from 'react';
+import { MapContainer, TileLayer } from 'react-leaflet';
 
 const Map = () => {
-  const [position, setPosition] = useState({ lat: 0, lon: 0 });
-  const [weatherData, setWeatherData] = useState(null);
+  const mapRef = useRef(null);
 
   useEffect(() => {
-    navigator.geolocation.getCurrentPosition((pos) => {
-      setPosition({
-        lat: pos.coords.latitude,
-        lon: pos.coords.longitude,
-      });
-    });
+    if (mapRef.current) {
+      const map = mapRef.current.leafletElement;
+      const bounds = map.getBounds();
+      map.fitBounds(bounds);
+    }
   }, []);
 
-  useEffect(() => {
-    if (position.lat && position.lon) {
-      const apiKey = 'YOUR_API_KEY'; // Replace with your OpenWeatherMap API key
-      const url = `https://api.openweathermap.org/data/2.5/weather?lat=${position.lat}&lon=${position.lon}&appid=${apiKey}`;
-
-      axios.get(url)
-        .then((response) => {
-          setWeatherData(response.data);
-        })
-        .catch((error) => {
-          console.error('Error fetching weather data:', error);
-        });
-    }
-  }, [position]);
-
   return (
-    <div style={{
-      width: '100px',
-      height: '100px',
-      backgroundColor: 'lightblue',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      fontSize: '14px',
-    }}
-    >
-      {weatherData ? (
-        `${weatherData.name}, ${weatherData.sys.country} - ${weatherData.weather[0].description}`
-      ) : (
-        'Loading...'
-      )}
+    <div style={{ height: '300px', width: '500px' }}>
+      <MapContainer ref={mapRef} center={[-20.2853, 47.5343]} zoom={5} style={{ height: '100%', width: '100%' }}>
+        <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
+      </MapContainer>
     </div>
   );
 };

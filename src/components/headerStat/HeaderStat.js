@@ -85,12 +85,22 @@ const DrawerHeader = styled('div')(({ theme }) => ({
 
 
 
+// 
+var user = localStorage.getItem('utilisateur');
+console.log(user);
+
+if(!user){
+  const newUser = {id: 1,name_user:"Farm City User",pass_word:"1215"}
+  user = newUser;
+}
+
+
 export default function PersistentDrawerLeft(props) {
   const theme = useTheme();
   const [open, setOpen] = React.useState(false);
 
-  const {active,element} = props;
-  console.log(active);
+  const {element} = props;
+ 
 
   const handleDrawerOpen = () => {
     setOpen(true);
@@ -128,7 +138,7 @@ export default function PersistentDrawerLeft(props) {
     }
   ];
 
-
+  const user = localStorage.getItem('utilisateur');
 
   return (
     <Box sx={{ display: 'flex' }} className="header__stat">
@@ -147,13 +157,13 @@ export default function PersistentDrawerLeft(props) {
 
             <div className="header__navbar__icons" style={{marginLeft:'70%'}}>
                     <div className="header__navbar__icons__items" >
-                        <Badge badgeContent={4} color="secondary">
+                        <Badge badgeContent={4} color="primary">
                             <Link to="chat"><MailOutlineIcon style={{color:'white'}}  fontSize='medium' className='icons'></MailOutlineIcon></Link>       
                         </Badge>
                     </div>
                 
                     <div className="header__navbar__icons__items">
-                        <Badge badgeContent={11} max={9} color="secondary">
+                        <Badge badgeContent={11} max={9} color="primary">
                             <NotificationsNoneIcon  style={{color:'white'}} fontSize='medium' className='icons'></NotificationsNoneIcon>   
                         </Badge>
                     </div>
@@ -170,7 +180,7 @@ export default function PersistentDrawerLeft(props) {
                     className="header__navbar__icons__avatar"
                 >
                     
-                    <AvatarMan image={"./sary.jpg"} ></AvatarMan>
+                    <AvatarMan avatarName={'Fanilo'}></AvatarMan>
                 </StyledBadge>
                     
             </div>
@@ -205,7 +215,7 @@ export default function PersistentDrawerLeft(props) {
                 <ListItem key={item.id} >
                   <ListItemButton component={Link} to={item.link}  >
                       <ListItemIcon>{item.icons} </ListItemIcon>
-                      <ListItemText style={{color : 'white'}} primary={item.name}></ListItemText>
+                      <ListItemText style={{color:'white'}}>{item.name}</ListItemText>
                   </ListItemButton>
                 </ListItem>   
               ))

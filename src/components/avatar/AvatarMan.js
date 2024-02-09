@@ -10,10 +10,30 @@ import Logout from '@mui/icons-material/Logout';
 import {Link} from 'react-router-dom';
 import BarChartIcon from '@mui/icons-material/BarChart';
 import { deepPurple } from '@mui/material/colors';
+import { useNavigate } from 'react-router-dom';
+
+function useMesFonctionsUtiles() {
+  const navigate = useNavigate();
+
+
+  const handleLogOut = () => {
+    const utilisateur = localStorage.getItem("utilisateur");
+
+    if (utilisateur) {
+      localStorage.removeItem("utilisateur");
+      navigate('/login');
+    } 
+  };
+
+  return { handleLogOut };
+}
+
+
+
 export default function AvatarMan(props) {
+  const {avatarName} = props;
 
   const [anchorEl, setAnchorEl] = React.useState(null);
-
   const open = Boolean(anchorEl);
   const handleClick = (event) => {
     setAnchorEl(event.currentTarget);
@@ -23,7 +43,12 @@ export default function AvatarMan(props) {
     setAnchorEl(null);
   };
 
+  const {handleLogOut} = useMesFonctionsUtiles();
+
+
+
   return (
+    
     <React.Fragment>
         <Tooltip title="My Account">
           <IconButton
@@ -34,7 +59,7 @@ export default function AvatarMan(props) {
             aria-haspopup="true"
             aria-expanded={open ? 'true' : undefined}
           >
-            <Avatar alt="Ismael Raveloson" src={props.image} style={{marginTop: '-4px'}} />
+            <Avatar></Avatar>
           </IconButton>
         </Tooltip>
 
@@ -76,7 +101,7 @@ export default function AvatarMan(props) {
       >
 
         <MenuItem onClick={handleClose}>
-          <Link to="/" style={{textDecoration: 'none',color: '#030303',display:'flex'}} ><Avatar alt="Ismael Raveloson" src={props.image} /><span style={{marginTop:'3px',marginLeft:'5px'}}>Ismael Raveloson</span></Link>
+          <Link to="/home" style={{textDecoration: 'none',color: '#030303',display:'flex'}} ><Avatar alt="Ismael Raveloson" src={props.image} /><span style={{marginTop:'3px',marginLeft:'5px'}}>{avatarName}</span></Link>
         </MenuItem>
         
         <MenuItem onClick={handleClose} component={Link} to="/stat">
@@ -86,7 +111,7 @@ export default function AvatarMan(props) {
         <Divider />
 
 
-        <MenuItem onClick={handleClose}>
+        <MenuItem onClick={handleLogOut}>
           <ListItemIcon>
             <Logout fontSize="small" />
           </ListItemIcon>
